@@ -1,0 +1,29 @@
+###Crear
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Darwin",
+    "email": "Darwin@gmail.com",
+    "estado": "Activo"
+}
+
+###Leer todos los datos
+GET http://localhost:9000/api/users HTTP/1.1
+
+###Leer datos por ID
+GET http://localhost:9000/api/users/64027ea3fecccc2c152afa25 HTTP/1.1
+
+###Actualizar
+PUT http://localhost:9000/api/users/641df5109958b4d50623627e HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Sebas",
+    "email": "Sebas@gmail.com",
+    "estado": "Activo"
+}
+
+###Eliminar
+DELETE  http://localhost:9000/api/users/64027ea3fecccc2c152afa25 HTTP/1.1
+

@@ -1,0 +1,28 @@
+###Crear
+POST http://localhost:9000/api/tipoEquipo HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Tablet",
+    "estado": "Activo"
+}
+
+
+###Leer todos los datos
+GET http://localhost:9000/api/tipoEquipo HTTP/1.1
+
+###Leer datos por ID
+GET http://localhost:9000/api/tipoEquipo/6402926d7fe348d9e30c7e72 HTTP/1.1
+
+###Actualizar
+PUT http://localhost:9000/api/tipoEquipo/6402926d7fe348d9e30c7e72 HTTP/1.1
+Content-Type: application/json
+
+{
+   "nombre": "Computador",
+    "estado": "Activo"
+}
+
+###Eliminar
+DELETE  http://localhost:9000/api/tipoEquipo/6402926d7fe348d9e30c7e72 HTTP/1.1
+

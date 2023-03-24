@@ -1,0 +1,46 @@
+###Crear
+POST http://localhost:9000/api/inventario HTTP/1.1
+Content-Type: application/json
+
+{
+    "serial":"1050",
+    "modelo":"Redmi Note 11  ",
+    "descripción":"Redmi Note 11 Pro 5G",
+    "color":"Negro",
+    "foto":"https://www.korolos.com.co/wp-content/uploads/2023/02/NOTE11PROKOROLOS.jpg",
+    "fechaCompra":"2022-02-01",
+    "precio":"20985000",
+    "usuario":{"_id":"64040fe9fe52e870470ba520"},
+    "marca":{"_id":"6402b714893a84525c1ca9fa"},
+    "tipoEquipo":{"_id":"640292607fe348d9e30c7e70"},
+    "estadoEquipo":{"_id":"6402b8be893a84525c1caa02"}
+}
+
+
+###Leer todos los datos
+GET http://localhost:9000/api/inventario HTTP/1.1
+
+###Leer datos por ID
+GET http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+
+###Actualizar
+PUT http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+Content-Type: application/json
+
+{
+    "serial":"1020",
+    "modelo":"Portátil Hp ",
+    "descripción":"Portátil Hp 15 Ck2101la ",
+    "color":"Negro",
+    "foto":"https://exitocol.vtexassets.com/arquivos/ids/12683729/portatil-hp-14-ck2101la-celeron-4gb-1tera-negro-sin-sistema-operativo.jpg?v=637872094558300000",
+    "fechaCompra":"2022-01-01",
+    "precio":"20860000",
+    "usuario":{"_id":"64027ea3fecccc2c152afa25"},
+    "marca":{"_id":"6402bfd01b299330bc55e34d"},
+    "tipoEquipo":{"_id":"6402926d7fe348d9e30c7e72"},
+    "estadoEquipo":{"_id":"6402b8be893a84525c1caa02"}
+}
+
+###Eliminar
+DELETE  http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+
