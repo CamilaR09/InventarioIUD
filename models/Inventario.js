@@ -2,7 +2,7 @@ const { Schema , model } = require('mongoose')
 
 const InventarioSchema = Schema({
     serial: {type:String,required:true,unique:true},
-    modelo: {type:String,required:true, unique:true},
+    modelo: {type:String,required:true,},
     descripción: {type:String,required:true},
     color: {type:String,required:true},
     foto: {type:String,required:true},
