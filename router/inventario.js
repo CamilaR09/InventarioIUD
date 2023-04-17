@@ -27,7 +27,7 @@ router.post('/inventario',validarInventario, async(req,res) =>{
 
     const existeSerial = await Inventario.findOne({serial: req.body.serial})
     if(existeSerial){
-        return res.send('Ya existe el serial para otro Equipo')
+        return res.status(422).json({ errors: [{ msg: 'Ya existe el serial para otro Equipo' }] });
     }
        const inventario = Inventario(req.body)
        inventario
@@ -52,9 +52,7 @@ router.get('/inventario', (req,res) =>{
 // Obtener Inventario por id
 router.get('/inventario/:id', (req,res) =>{
     const{id}= req.params
-    if (!mongoose.isValidObjectId(id)) {
-        return res.status(400).json({ error: 'El ID debe contener 24 caracteres revisé bien' });
-      }
+    
     Inventario
     .findById(id)
     .populate('usuario', 'nombre email estado') 
@@ -75,6 +73,9 @@ router.put('/inventario/:id', (req,res) =>{
     const{id}= req.params
     if (!mongoose.isValidObjectId(id)) {
         return res.status(400).json({ error: 'El ID debe contener 24 caracteres revisé bien' });
+      }
+      if (!id) {
+        return res.status(400).json({ error: 'Inventario no existe' });
       }
     const{serial,modelo,descripción,color,foto,fechaCompra,
         precio,usuario,marca,tipoEquipo,estadoEquipo,fechaActualizacio} = req.body

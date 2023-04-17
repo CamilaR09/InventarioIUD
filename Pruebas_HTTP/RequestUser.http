@@ -21,7 +21,7 @@ Content-Type: application/json
 {
   "nombre": "Sebas",
     "email": "Sebas@gmail.com",
-    "estado": "Activo"
+    "estado": "Inactivo"
 }
 
 ###Eliminar

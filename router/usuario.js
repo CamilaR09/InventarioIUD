@@ -60,9 +60,9 @@ router.put('/users/:id', (req,res) =>{
     if (!mongoose.isValidObjectId(id)) {
         return res.status(400).json({ error: 'El ID debe contener 24 caracteres revisé bien' });
       }
-    const{nombre,email,estado,fechaActualizacio} = req.body
+    const{nombre,email,estado,fechaActualizacion} = req.body
     Usuario
-    .updateOne({_id:id},{$set:{nombre,email,estado,fechaActualizacio}})
+    .updateOne({_id:id},{$set:{nombre,email,estado,fechaActualizacion}})
     .then(() => {res.json({message: 'Usuario actualizado exitosamente'})})
     .catch((error)=> res.json({message:error}))
 })
