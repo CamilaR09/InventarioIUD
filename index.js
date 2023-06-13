@@ -16,7 +16,7 @@ app.use("/api", require("./router/inventario"));
 
 //Routes 
 app.get('/',(req,res) =>{
-   res.send("Hola amor")
+   res.send("Hola Bienvenidos a API Inventario")
 })
 
 //Conexion Base de datos
