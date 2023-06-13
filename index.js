@@ -14,10 +14,10 @@ app.use("/api", require("./router/estadoEquipo"));
 app.use("/api", require("./router/inventario"));
 
 
-//Routes
-app.get("/", (req, res) => {
-  res.send("Hola Bienvenido a la api Inventario");
-});
+//Routes 
+app.get('/',(req,res) =>{
+   res.send("Hola amor")
+})
 
 //Conexion Base de datos
 mongoose
