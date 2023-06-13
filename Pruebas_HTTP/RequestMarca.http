@@ -3,7 +3,7 @@ POST http://localhost:9000/api/marca HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "Huawei",
+    "nombre": "SamSung",
     "estado": "Activo"
 }
 

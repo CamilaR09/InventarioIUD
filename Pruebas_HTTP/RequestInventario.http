@@ -19,6 +19,7 @@ Content-Type: application/json
 
 ###Leer todos los datos
 GET http://localhost:9000/api/inventario HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDg1MzQ3ZDhkMjA0NTVhYTBhNjA1MzciLCJpYXQiOjE2ODY2OTIxMzksImV4cCI6MTY4NjY5NTczOX0.ZL4dvlIaEyqYMEuWsQLXEH06RhLPm58-vdHfe9w5vCc
 
 ###Leer datos por ID
 GET http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
