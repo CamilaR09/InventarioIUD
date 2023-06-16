@@ -1,21 +1,25 @@
 ###Crear
 POST http://localhost:9000/api/estadoEquipo HTTP/1.1
+Authorization: Bearer  
 Content-Type: application/json
 
 {
-    "nombre": "En Mantenimiento",
+    "nombre": "En Bodega",
     "estado": "Inactivo"
 }
 
 
 ###Leer todos los datos
 GET http://localhost:9000/api/estadoEquipo HTTP/1.1
+Authorization: Bearer 
 
 ###Leer datos por ID
 GET http://localhost:9000/api/estadoEquipo/6402b8ee893b84525c1caa04 HTTP/1.1
+Authorization: Bearer 
 
 ###Actualizar
 PUT http://localhost:9000/api/estadoEquipo/6402b8ee893a84525c1caa04 HTTP/1.1
+Authorization: Bearer 
 Content-Type: application/json
 
 {
@@ -25,4 +29,5 @@ Content-Type: application/json
 
 ###Eliminar
 DELETE  http://localhost:9000/api/estadoEquipo/6402b8ee893a84525c1caa04 HTTP/1.1
+Authorization: Bearer 
 

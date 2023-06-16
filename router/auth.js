@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const Usuario = require("../models/Usuario");
 
-const secret = "your-secret-key"; // Cambia esto por tu clave secreta real
+const secret = "your-secret-key";
 
 function generateToken(userId) {
   const payload = {
@@ -15,6 +15,7 @@ function generateToken(userId) {
 
   return jwt.sign(payload, secret, options);
 }
+
 async function verifyToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
@@ -27,7 +28,6 @@ async function verifyToken(req, res, next) {
     const decoded = jwt.verify(token, secret);
     req.userId = decoded.userId;
 
-    // Verificar permisos aquí
     const usuario = await Usuario.findById(decoded.userId);
     if (!usuario) {
       return res.sendStatus(401);
@@ -37,8 +37,13 @@ async function verifyToken(req, res, next) {
       // Los usuarios con rol "administrador" tienen acceso a todo
       next();
     } else if (usuario.rol === "docente") {
-      // Los usuarios con rol "docente" solo pueden acceder a la visualización de inventarios
-      if (req.method === "GET" && req.path.startsWith("http://localhost:9000/api/inventario")) {
+      const allowedPaths = [
+        "/api/inventario",
+        "/api/inventario/",
+        "/api/inventario/:id"
+      ];
+      
+      if (allowedPaths.includes(req.path)) {
         next();
       } else {
         return res.sendStatus(403);
@@ -51,7 +56,6 @@ async function verifyToken(req, res, next) {
   }
 }
 
-
 async function login(req, res) {
   const { email, contrasena } = req.body;
 
@@ -61,8 +65,6 @@ async function login(req, res) {
     if (!usuario) {
       return res.status(401).json({ error: "Credenciales inválidas" });
     }
-    console.log("Contraseña ingresada:", contrasena);
-    console.log("Contraseña almacenada en la base de datos:", usuario.contrasena);
 
     // Verificar la contraseña
     const contrasenaValida = await bcrypt.compare(

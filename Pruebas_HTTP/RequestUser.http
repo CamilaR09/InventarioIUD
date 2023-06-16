@@ -1,5 +1,6 @@
 ###Crear
 POST http://localhost:9000/api/users HTTP/1.1
+Authorization: Bearer 
 Content-Type: application/json
 
 {
@@ -13,12 +14,15 @@ Content-Type: application/json
 
 ###Leer todos los datos
 GET http://localhost:9000/api/users HTTP/1.1
+Authorization: Bearer 
 
 ###Leer datos por ID
 GET http://localhost:9000/api/users/6486ac97cd5a3637e8c48335 HTTP/1.1
+Authorization: Bearer 
 
 ###Actualizar
 PUT http://localhost:9000/api/users/6485347d8d20455aa0a60537 HTTP/1.1
+Authorization: Bearer 
 Content-Type: application/json
 
 {
@@ -31,6 +35,7 @@ Content-Type: application/json
 
 ###Eliminar
 DELETE  http://localhost:9000/api/users/6485347d8d20455aa0a60537 HTTP/1.1
+Authorization: Bearer 
 
 ###Login ADMIN
 POST http://localhost:9000/api/login

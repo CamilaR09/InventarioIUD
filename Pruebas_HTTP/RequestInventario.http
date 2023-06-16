@@ -1,31 +1,35 @@
 ###Crear
 POST http://localhost:9000/api/inventario HTTP/1.1
+Authorization: Bearer 
 Content-Type: application/json
 
 {
-    "serial":"1050",
-    "modelo":"Redmi Note 11  ",
-    "descripción":"Redmi Note 11 Pro 5G",
+    "serial":"1010",
+    "modelo":"Redmi  12  ",
+    "descripción":"Redmi Note 12Pro 5G",
     "color":"Negro",
     "foto":"https://www.korolos.com.co/wp-content/uploads/2023/02/NOTE11PROKOROLOS.jpg",
     "fechaCompra":"2022-02-01",
     "precio":"20985000",
-    "usuario":{"_id":"64040fe9fe52e870470ba520"},
-    "marca":{"_id":"6402b714893a84525c1ca9fa"},
-    "tipoEquipo":{"_id":"640292607fe348d9e30c7e70"},
-    "estadoEquipo":{"_id":"6402b8be893a84525c1caa02"}
+    "usuario":{"_id":"6485347d8d20455aa0a60537"},
+    "marca":{"_id":"64852d59dea3acbaf550f055"},
+    "tipoEquipo":{"_id":"64852daddea3acbaf550f05c"},
+    "estadoEquipo":{"_id":"64852d94dea3acbaf550f057"}
 }
 
 
 ###Leer todos los datos
-GET http://localhost:9000/api/inventario HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDg1MzQ3ZDhkMjA0NTVhYTBhNjA1MzciLCJpYXQiOjE2ODY2OTIxMzksImV4cCI6MTY4NjY5NTczOX0.ZL4dvlIaEyqYMEuWsQLXEH06RhLPm58-vdHfe9w5vCc
+GET http://localhost:9000/api/inventario HTTP/1.2
+Authorization: Bearer 
 
 ###Leer datos por ID
-GET http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+GET http://localhost:9000/api/inventario/64852d9fdea3acbaf550f05a HTTP/1.1
+Authorization: Bearer 
+
 
 ###Actualizar
 PUT http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+Authorization: Bearer 
 Content-Type: application/json
 
 {
@@ -44,4 +48,5 @@ Content-Type: application/json
 
 ###Eliminar
 DELETE  http://localhost:9000/api/inventario/6402ca00d951a9e6295d552c HTTP/1.1
+Authorization: Bearer 
 

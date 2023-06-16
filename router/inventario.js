@@ -7,16 +7,7 @@ const { verifyToken } = require("./auth");
 
 // Validaciones para la creación de inventario
 const validarInventario = [
-  check("serial", "El serial es requerido").not().isEmpty(),
-  check("modelo", "El modelo es requerido").not().isEmpty(),
-  check("descripción", "La descripción es requerida").not().isEmpty(),
-  check("color", "El color es requerido").not().isEmpty(),
-  check("foto", "La foto es requerida").not().isEmpty(),
-  check("fechaCompra", "La fecha de compra es requerida").not().isEmpty(),
-  check("precio", "El precio es requerido").not().isEmpty(),
-  check("usuario", "El usuario es requerido").not().isEmpty(),
-  check("marca", "La marca es requerida").not().isEmpty(),
-  check("tipoEquipo", "El tipo de equipo es requerido").not().isEmpty(),
+ 
 ];
 
 // Crear un Inventario
